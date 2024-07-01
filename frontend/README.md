@@ -9,3 +9,5 @@ Updating github files
 1. Editing html file 
 2. When to create Cosmos Db accounnt next 
 3. Creating the Azure Function
+- using func host start 
+4. Editing html file to make counter data visible
