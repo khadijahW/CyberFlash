@@ -9,7 +9,7 @@ const functionApi = 'http://localhost:7071/api/GetResumeCounter';
 
 const getVisitCount = () => {
   console.log('Fetching visit count...');
-  fetch(functionApiUrl)
+  fetch(functionApi)
       .then(response => {
           if (!response.ok) {
               throw new Error('Network response was not ok');
@@ -18,9 +18,9 @@ const getVisitCount = () => {
       })
       .then(data => {
           console.log('Received data:', data);
-          if (data && typeof data.Count !== 'undefined') {
-              console.log("Hello! You are visitor number: " + data.Count);
-              document.getElementById('counter').innerText = data.Count;
+          if (data && typeof data.count !== 'undefined') {
+              console.log("Hello! You are visitor number: " + data.count);
+              document.getElementById('counter').innerText = data.count;
           } else {
               throw new Error('Count data is invalid or missing');
           }
