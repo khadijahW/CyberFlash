@@ -2,7 +2,7 @@
 
 GetResumeCounter.cs 
 - This is where you are adding the COSMOSDB Bindings
-  [!IMPORTANT] Ensure that the correct nuget package is installed 
+ > [!IMPORTANT] Ensure that the correct nuget package is installed 
 
 Copy the primary connection string from CosmosDB to local.settings.json to the AzureResumeConnectionString parameter
 
@@ -10,7 +10,7 @@ Next step is to create the function
 1. Select the function icon
     -   Browse to the location and esure that the backed/api folder is selected as the location to create the function in
     -   net8.0 LTS isolated 
-[!Note] You must create the function in order to have a local project folder otherwise you wont be able to deploy the function to azure
+> [!NOTE] You must create the function in order to have a local project folder otherwise you wont be able to deploy the function to azure
 2. The Counter.cs file stores the Id and count values originally created in azure functions
 3. Then run func host start from api folder
 - update html to include counter(this is the variable that stores the count information when the site is visited)
