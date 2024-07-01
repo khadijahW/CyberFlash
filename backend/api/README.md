@@ -13,9 +13,13 @@ Then run func host start from api folder
 
 -body holds the function counter and diplays it as seen below 
 
-<body>
+- <body>
     <script src="main.js"></script>
     </h1>
     <p>This site has been viewed: <span id="counter"></span> times</p>                                       
-</body>
-                                    
+- </body>
+
+
+
+
+Deploy the function to azure by creating a new function                 
