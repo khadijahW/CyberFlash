@@ -51,6 +51,4 @@ Next is configuring the custom domain using azure cdn
 - Validate domain custom ownership
 -   note this can take approximately 10 minutes to load 
 
-
-
-define caching and purging as part of our CI/CD
+Validation state hen from approved to deployed
