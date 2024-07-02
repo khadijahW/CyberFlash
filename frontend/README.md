@@ -52,3 +52,16 @@ Next is configuring the custom domain using azure cdn
 -   note this can take approximately 10 minutes to load 
 
 Validation state hen from approved to deployed
+
+
+
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<Error>
+<Code>InvalidQueryParameterValue</Code>
+<Message>Value for one of the query parameters specified in the request URI is invalid. RequestId:349475fe-801e-003f-7333-cc2d80000000 Time:2024-07-02T03:56:37.3972391Z</Message>
+<QueryParameterName>comp</QueryParameterName>
+<QueryParameterValue/>
+<Reason/>
+</Error>
+
+- to fix this error make sure files are updated to azure storage by redeploying frontend files 
