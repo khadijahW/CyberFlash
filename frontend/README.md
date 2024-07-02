@@ -21,3 +21,36 @@ Updating github files
     "_attachments": "attachments/",
     "_ts": 1719807852
 }
+
+
+In azure add https://getresumecounter28.azurewebsites.net
+to the CORS section
+
+Then right click frontend folder and deploy to static website 
+
+
+
+
+                                            <!--body holds the function counter and diplays it -->
+
+                                            Hi, I'm Khadijah<br>
+                                            <body>
+                                                <script src="main.js"></script>
+                                              </h1>
+                                              <p>This site has been viewed: <span id="counter"></span> times</p>
+                                              
+                                              </body>
+
+
+Next is configuring the custom domain using azure cdn
+- storage account  
+- then create azure cdn
+- adding custom domain(cyberflash.net) to CDN profile
+- have to enablle https and enable cors setting 
+- associate the endpoint 
+- Validate domain custom ownership
+-   note this can take approximately 10 minutes to load 
+
+
+
+define caching and purging as part of our CI/CD
