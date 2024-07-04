@@ -66,3 +66,8 @@ This XML file does not appear to have any style information associated with it. 
 
 - to fix this error make sure files are updated to azure storage by redeploying frontend files 
 - add https://thecyberflash.net to  CORS in azure
+
+created workflows
+.github/workflows/backend.main.yml #1: Commit 6d112b6 pushed by khadijahW
+- backend failed 
+- this is because the backend has not been implemented yet 
