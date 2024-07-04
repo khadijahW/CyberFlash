@@ -1,11 +1,10 @@
-name: Deploy_Frontend
-# when push is made from the frontend
+name: Blob storage website CI
 
 on:
     push:
         branches: [ main ]
-        paths:
-         - 'frontend/**'
+        paths: 'frontend/**'
+
 jobs:
   build:
     runs-on: ubuntu-latest
