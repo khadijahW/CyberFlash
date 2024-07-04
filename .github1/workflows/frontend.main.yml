@@ -1,9 +1,11 @@
-name: Blob storage website CI
+name: Deploy_Frontend
+#Deploys when push is made from the frontend folder
 
 on:
     push:
         branches: [ main ]
-        paths: 'frontend/**'
+        paths:
+        - 'frontend/**'
 
 jobs:
   build:
@@ -24,7 +26,6 @@ jobs:
       with:
         inlineScript: |
            az cdn endpoint purge --content-paths  "/*" --profile-name "CyberFlash" --name "CyberFlash" --resource-group "azureresume-rg"
-
   # Azure logout
     - name: logout
       run: |
