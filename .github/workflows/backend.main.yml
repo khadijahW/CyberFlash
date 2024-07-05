@@ -1,6 +1,1 @@
-name: Deploy_Frontend
-#Deploys when push is made from the frontend folder
 
-on:
-    push:
-        bra
