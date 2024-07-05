@@ -1,10 +1,8 @@
-name: Deployment
+name: Blob storage website CI
 
 on:
     push:
         branches: [ main ]
-        paths:
-        - 'frontend/**'
 
 jobs:
   build:
@@ -19,12 +17,12 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name getresumecounter12 --auth-mode key -d '$web' -s frontend/
+            az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME> --auth-mode key -d '$web' -s .
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
         inlineScript: |
-           az cdn endpoint purge --content-paths  "/*" --profile-name "CyberFlash" --name "CyberFlash" --resource-group "azureresume-rg"
+           az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
 
   # Azure logout
     - name: logout
