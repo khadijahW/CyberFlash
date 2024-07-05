@@ -1,8 +1,6 @@
-name: Deploy_Frontend
+name: Deployment
 
-#Deploys when push is made from the frontend folder
-
-on: 
+on:
     push:
         branches: [ main ]
         paths:
@@ -15,7 +13,8 @@ jobs:
     - uses: actions/checkout@v3
     - uses: azure/login@v1
       with:
-          creds: ${{secrets.AZURE_CREDENTIALS}}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
@@ -26,7 +25,7 @@ jobs:
       with:
         inlineScript: |
            az cdn endpoint purge --content-paths  "/*" --profile-name "CyberFlash" --name "CyberFlash" --resource-group "azureresume-rg"
- 
+
   # Azure logout
     - name: logout
       run: |
