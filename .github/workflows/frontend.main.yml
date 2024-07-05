@@ -1,7 +1,8 @@
 name: Deploy_Frontend
+
 #Deploys when push is made from the frontend folder
 
-on:
+on: 
     push:
         branches: [ main ]
         paths:
@@ -25,6 +26,7 @@ jobs:
       with:
         inlineScript: |
            az cdn endpoint purge --content-paths  "/*" --profile-name "CyberFlash" --name "CyberFlash" --resource-group "azureresume-rg"
+ 
   # Azure logout
     - name: logout
       run: |
