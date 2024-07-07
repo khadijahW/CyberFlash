@@ -27,3 +27,13 @@ body holds the function counter and diplays it as seen below
 
 
 Deploy the function to azure by creating a new function           
+
+
+
+
+
+Can't determine project language from files. Please use one of [--dotnet-isolated, --dotnet, --javascript, --typescript, --java, --python, --powershell, --custom]
+Can't determine project language from files. Please use one of [--dotnet-isolated, --dotnet, --javascript, --typescript, --java, --python, --powershell, --custom]
+
+
+- had to add local.setting/json to api folder, accidentally deleted 
