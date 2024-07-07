@@ -1,4 +1,4 @@
-name: Deploy Website
+name: Blob storage website CI
 
 on:
     push:
@@ -10,42 +10,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
-
-    - name: Login to Azure
-      id: azure_login
-      uses: azure/login@v1
+    - uses: actions/checkout@v3
+    - uses: azure/login@v1
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-    - name: Verify Login
-      run: |
-        echo "Azure account show:"
-        az account show
-
-    - name: List Storage Accounts (Debug)
-      run: |
-        echo "Listing storage accounts for debugging:"
-        az storage account list
 
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            echo "Uploading to blob storage"
-            az storage blob upload-batch --account-name getresumecounter12 -d '$web' -s frontend/
-        
-
+            az storage blob upload-batch --account-name getresumecounter12 --auth-mode key -d '$web' -s frontend/
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
         inlineScript: |
-           echo "Purging CDN endpoint"
-           az cdn endpoint purge --content-paths "/*" --profile-name "CyberFlash" --name "CyberFlash" --resource-group "azureresume-rg"
+           az cdn endpoint purge --content-paths  "/*" --profile-name "CyberFlash" --name "CyberFlash" --resource-group "azureresume-rg"
 
-    - name: Logout of Azure
-      if: always()
+  # Azure logout
+    - name: logout
       run: |
-        echo "Logging out of Azure"
-        az logout
+            az logout
+      if: always()
