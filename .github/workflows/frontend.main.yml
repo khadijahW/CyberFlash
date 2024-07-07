@@ -1,21 +1,14 @@
-name: deploy_frontend
-#when push is made from the fontend folder
-on:
+name: Blob storage website CI
 
+on:
     push:
         branches: [ main ]
-        paths:
-        - 'frontend/**'
+
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
-    
     steps:
-  
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: azure/login@v1
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
@@ -24,17 +17,15 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name getresumecounter12 -d '$web' -s frontend/
+            az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME> --auth-mode key -d '$web' -s .
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
         inlineScript: |
-           az cdn endpoint purge --content-paths  "/*" --profile-name "CyberFlash" --name "CyberFlash" --resource-group "azureresume-rg"
+           az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
 
   # Azure logout
     - name: logout
       run: |
             az logout
       if: always()
-
-
