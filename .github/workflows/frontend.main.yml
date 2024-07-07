@@ -2,9 +2,10 @@ name: Azure_Frontend_Git_Actions
 
 on:
   push:
-    branches: [ main]
+    branches:
+      - main
     paths:
-     - 'frontend/**'
+      - 'frontend/**'
 
 jobs:
   auth:
