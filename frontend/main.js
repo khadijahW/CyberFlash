@@ -8,7 +8,7 @@ const functionApi = 'http://localhost:7071/api/GetResumeCounter';
 
 const getVisitCount = () => {
   console.log('Fetching visit count...');
-  fetch(functionApi)
+  fetch(functionApiUrl)
       .then(response => {
           if (!response.ok) {
               throw new Error('Network response was not ok');
