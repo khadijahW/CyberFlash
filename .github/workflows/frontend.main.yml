@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'frontend/**'  # Trigger only on changes in frontend directory
+      - frontend  # Trigger only on changes in frontend directory
 
 
 jobs:
