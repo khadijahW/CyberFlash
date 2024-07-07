@@ -23,7 +23,8 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az storage blob upload-batch --account-name getresumecounter12 -d '$web' -s frontend
+            az storage blob upload-batch --account-name getresumecounter12 -d '$web' -s frontend 
+          #removed the / after frontend
 
       - name: Purge CDN Endpoint
         uses: azure/CLI@v1
