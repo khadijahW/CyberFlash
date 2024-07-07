@@ -10,7 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout Code
+      uses: actions/checkout@v3
 
     - name: Login to Azure
       id: azure_login
@@ -19,20 +20,32 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Verify Login
-      run: az account show
+      run: |
+        echo "Azure account show:"
+        az account show
+
+    - name: List Storage Accounts (Debug)
+      run: |
+        echo "Listing storage accounts for debugging:"
+        az storage account list
 
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
         inlineScript: |
+            echo "Uploading to blob storage"
             az storage blob upload-batch --account-name getresumecounter12 -d '$web' -s frontend/
-      
+        
+
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
         inlineScript: |
+           echo "Purging CDN endpoint"
            az cdn endpoint purge --content-paths "/*" --profile-name "CyberFlash" --name "CyberFlash" --resource-group "azureresume-rg"
 
     - name: Logout of Azure
       if: always()
-      run: az logout
+      run: |
+        echo "Logging out of Azure"
+        az logout
