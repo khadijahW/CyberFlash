@@ -1,30 +1,52 @@
-name: "Azure_Frontend_Git_Actions"
+name: Deploy Website
+
 on:
     push:
-        branches:
-            - main
+        branches: [ main ]
+        paths:
+        - 'frontend/**'
+
 jobs:
-    auth:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - uses: azure/login@v1
-              with:
-                creds: ${{secrets.AZURE_CREDENTIALS}}
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4  # Updated to the latest version
 
-            - name: Upload to blob storage
-              uses: azure/CLI@v1
-              with:
-                inlineScript: |
-                    az storage blob upload-batch --account-name getresumecounter12 --account-key ${{ secrets.AZURE_STORAGE_KEY }} --auth-mode key --overwrite -d '$web' -s frontend
+    - name: Login to Azure
+      id: azure_login
+      uses: azure/login@v1
+      with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-            - name: Purge CDN endpoint
-              uses: azure/CLI@v1
-              with:
-                inlineScript: |
-                     az cdn endpoint purge --content-paths  "/*" --profile-name "CyberFlash" --name "CyberFlash" --resource-group "azureresume-rg"
+    - name: Verify Login
+      run: |
+        echo "Azure account show:"
+        az account show
 
-            - name: az Logout
-              run: |
-                  az logout
-              if: always()
+    - name: List Storage Accounts (Debug)
+      run: |
+        echo "Listing storage accounts for debugging:"
+        az storage account list
+
+    - name: Upload to blob storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          echo "Uploading to blob storage"
+          az storage blob upload-batch --account-name getresumecounter12 -d '$web' -s frontend/
+          echo "List blobs in the storage container"
+          az storage blob list --account-name getresumecounter12 --container-name '$web'
+
+    - name: Purge CDN endpoint
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          echo "Purging CDN endpoint"
+          az cdn endpoint purge --content-paths "/*" --profile-name "CyberFlash" --name "CyberFlash" --resource-group "azureresume-rg"
+
+    - name: Logout of Azure
+      if: always()
+      run: |
+        echo "Logging out of Azure"
+        az logout
