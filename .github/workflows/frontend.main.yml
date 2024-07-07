@@ -1,4 +1,4 @@
-name: Blob storage website CI
+name: Deploy Website
 
 on:
     push:
