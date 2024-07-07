@@ -3,8 +3,7 @@ on:
     push:
         branches:
             - main
-        paths:
-            - 'frontend/**'
+       
 jobs:
     auth:
         runs-on: ubuntu-latest
