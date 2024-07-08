@@ -4,6 +4,87 @@ body {
   background-color: #ffffff;
   overflow-x: hidden;
 }
+.modal-popup {
+  max-width        : 680px;
+  background-color : white;
+  font-size        : calc(var(--text-size) * 0.9447);
+  line-height      : var(--vspace-0_875);
+  color            : rgba(0, 0, 0, 0.75);
+  overflow-y       : auto;
+  position         : relative;
+}
+
+.modal-popup img {
+  margin-bottom : var(--vspace-0_75);
+}
+
+.modal-popup h5 {
+  font-family   : var(--font-1);
+  font-size     : var(--text-size);
+  line-height   : var(--vspace-1);
+  font-weight   : 500;
+  margin-top    : 0;
+  margin-bottom : var(--vspace-0_25);
+  color         : black;
+}
+
+.modal-popup__desc {
+  padding : 0 var(--vspace-1_25) var(--vspace-0_25);
+}
+
+.modal-popup__cat {
+  list-style   : none;
+  margin-left  : 0;
+  font-size    : var(--text-sm);
+  line-height  : var(--vspace-0_5);
+  color        : rgba(0, 0, 0, 0.6);
+  padding-left : calc(0.875 * var(--space));
+  position     : relative;
+}
+
+.modal-popup__cat::before {
+  content             : "";
+  display             : block;
+  height              : calc(0.625 * var(--space));
+  width               : calc(0.625 * var(--space));
+  background-repeat   : no-repeat;
+  background-position : center;
+  background-size     : contain;
+  background-image    : url(../images/icons/icon-tag.svg);
+  position            : absolute;
+  left                : 0;
+  top                 : -0.15em;
+}
+
+.modal-popup__cat li {
+  display      : inline;
+  padding-left : 0;
+}
+
+.modal-popup__cat li::after {
+  content : ", ";
+}
+
+.modal-popup__cat li:last-child::after {
+  display : none;
+}
+
+.modal-popup__details {
+  background-color : rgb(2, 15, 9);
+  font-size        : var(--text-xs);
+  line-height      : var(--vspace-1_25);
+  color            : white;
+  padding          : 0 1.2rem;
+  position         : absolute;
+  top              : var(--vspace-1);
+  left             : var(--vspace-1);
+}
+
+.modal-popup__details:focus,
+.modal-popup__details:hover {
+  background-color : rgb(18, 176, 105);
+  color            : rgb(249, 249, 252);
+}
 
 .layout_padding {
   padding: 90px 0;

@@ -71,3 +71,18 @@ created workflows
 .github/workflows/backend.main.yml #1: Commit 6d112b6 pushed by khadijahW
 - backend failed 
 - this is because the backend has not been implemented yet 
+
+Error
+
+when loading 
+https://getresumecounter12.z20.web.core.windows.net/
+the counter was not working 
+
+- running inspect on the loaded page and correcting the errors will allow the api to run
+- checking main.js for proper formating also helps 
+- this also helps it show on the cyberflash.net
+
+
+github and linkedin icons not displaying in html 
+-need to add this 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
