@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{A5530AC9-BA61-4897-BF30-CD280F049423}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{CF220183-4E19-4FDD-BF5B-89DFB46D833A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api", "backend\api\api.csproj", "{33B85D35-0569-41EE-8A13-8D0F31BC8635}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api", "backend\api\api.csproj", "{F4AEC861-1855-4178-B305-13DA09CBE3C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,18 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{33B85D35-0569-41EE-8A13-8D0F31BC8635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33B85D35-0569-41EE-8A13-8D0F31BC8635}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33B85D35-0569-41EE-8A13-8D0F31BC8635}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33B85D35-0569-41EE-8A13-8D0F31BC8635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4AEC861-1855-4178-B305-13DA09CBE3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4AEC861-1855-4178-B305-13DA09CBE3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4AEC861-1855-4178-B305-13DA09CBE3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4AEC861-1855-4178-B305-13DA09CBE3C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{33B85D35-0569-41EE-8A13-8D0F31BC8635} = {A5530AC9-BA61-4897-BF30-CD280F049423}
+		{F4AEC861-1855-4178-B305-13DA09CBE3C6} = {CF220183-4E19-4FDD-BF5B-89DFB46D833A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {10CCBE11-1CCD-4DF5-B73F-F6162A1A26C2}
+		SolutionGuid = {9C8AD092-922A-4340-BDDD-CF5316DB2C7B}
 	EndGlobalSection
 EndGlobal

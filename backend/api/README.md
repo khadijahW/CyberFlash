@@ -37,3 +37,6 @@ Can't determine project language from files. Please use one of [--dotnet-isolate
 
 
 - had to add local.setting/json to api folder, accidentally deleted 
+
+
+had to add accountkey so github workflow can push changes to storage account 
