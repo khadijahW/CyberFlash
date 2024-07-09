@@ -86,3 +86,8 @@ the counter was not working
 github and linkedin icons not displaying in html 
 -need to add this 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+My resume counter was not loading initially
+html recieved when JSON expected
+- I had to use the url function (host key) in main.js
