@@ -8,7 +8,7 @@ const functionApi = 'http://localhost:7071/api/GetResumeCounter';
 
 const getVisitCount = () => {
     let count = 0;
-    fetch(functionApi).then(response => {
+    fetch(functionApiUrl).then(response => {
         return response.json()
     }).then(response =>{
         console.log("website called function API.");
