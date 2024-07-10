@@ -91,3 +91,4 @@ github and linkedin icons not displaying in html
 My resume counter was not loading initially
 html recieved when JSON expected
 - I had to use the url function (host key) in main.js
+- I also realized if the function is on the consumption plan there a delay in the function loading 
