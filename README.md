@@ -14,12 +14,11 @@ Additionally her is the architecture diagram for my project:
 # Frontend
 - The frontend folder contains the files used to host the static website
 - The api folder contains the dotnet API deployed to Azure functions
-
-
-
+- The main.js file contains the visitor counter code
 
 # Backend 
  - This is where the HTTP trigger function resides. When the functions is triggered it retrieves the CosmosDB item and adds 1 to it and returns this value to the GetResumeCounter
+
 
 # Workflow
 
@@ -28,5 +27,11 @@ Additionally her is the architecture diagram for my project:
 As I progressed through the project, I faced a few challenges and realizations as noted below:
 I decided to document this issues for my own future record and also believe that this may help others if attempting this project.
 
->[Important] The project Function was missing as I prepared to deploy my function
-            Issue: Copying files from other repositories I had created rather than the individual code
+>[Issue] The project Function was missing as I prepared to deploy my function
+            Why: Copying files from other repositories I had created rather than the individual code
+
+>[Issue]
+
+>[Issue]
+
+>
