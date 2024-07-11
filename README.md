@@ -56,3 +56,20 @@ I decided to document this issues for my own future record and also believe that
 >[Issue] Backend workflow Failure
 
           Why: This is because the backend has not been implemented yet 
+
+
+>[Issue]github and linkedin icons not displaying in html
+
+          Why: need to add
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.m
+
+
+
+>[Issue]Can't determine project language from files. Please use one of [--dotnet-isolated, --dotnet, --javascript, --typescript, --java, --python, --powershell, --custom] Can't determine project language from files. Please use one of [--dotnet-isolated, --dotnet, --javascript, --typescript, --java, --python, --powershell, --custom]
+
+          Why: Accidental deletion of local.settings.json file- this needed to be re-added to the api folder 
+
+
+>[Issue] Frontend git actions: Upload to Blob storage issue
+        Why: Authorization required inorder for git to access the blob storage
+        Fix: In the frontend.main.yml file use --account-key and add the account key
