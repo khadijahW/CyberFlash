@@ -30,8 +30,14 @@ I decided to document this issues for my own future record and also believe that
 >[Issue] The project Function was missing as I prepared to deploy my function
             Why: Copying files from other repositories I had created rather than the individual code
 
->[Issue]
 
->[Issue]
+>[Issue] Resume counter not working
+           why: Issue with main.js formating and displaying counter in html file 
 
->
+
+>[Issue] This XML file does not appear to have any style information associated with it. The document tree is shown below. InvalidQueryParameterValue Value for one of the query parameters specified in the request URI is invalid. RequestId:349475fe-801e-003f-7333-cc2d80000000 Time:2024-07-02T03:56:37.3972391Z comp
+          Why: Fronted end files not updated and necessary CORS orgin missing 
+
+
+>[Issue] Backend workflow Failure
+          Why: This is because the backend has not been implemented yet 
