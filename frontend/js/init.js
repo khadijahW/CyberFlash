@@ -166,7 +166,7 @@
             // There was an error
             else {
                $('#image-loader').fadeOut();
-               $('#message-warning').text(msg);
+               $('#message-warning').html(msg);
 	            $('#message-warning').fadeIn();
             }
 
